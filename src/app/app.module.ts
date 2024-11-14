@@ -4,15 +4,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { NewsComponent } from './components/pages/news/news.component';
 import { OurteamComponent } from './components/pages/ourteam/ourteam.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeroComponent } from './components/pages/home/componentHome/hero/hero.component';
 import { OpportunitiesComponent } from './components/pages/home/componentHome/opportunities/opportunities.component';
 import { ServicesComponent } from './components/pages/home/componentHome/services/services.component';
-import { SearchComponent } from './components/pages/news/newsComponents/search/search.component';
-import { OpportunityCardsComponent } from './components/pages/news/newsComponents/opportunity-cards/opportunity-cards.component';
 import { TeamSectionComponent } from './components/pages/ourteam/ourteamComponents/team-section/team-section.component';
 import { WhoWeAreComponent } from './components/pages/ourteam/ourteamComponents/who-we-are/who-we-are.component';
 import { ValuesSectionComponent } from './components/pages/ourteam/ourteamComponents/values-section/values-section.component';
@@ -26,27 +23,24 @@ import { WompiButtonComponent } from './components/shared/wompi-button/wompi-but
 import { OpportunitieCardComponent } from './components/pages/home/componentHome/opportunities/opportunitie-card/opportunitie-card.component';
 import { ServicesCardComponent } from './components/pages/home/componentHome/services/services-card/services-card.component';
 import { TeamCardComponent } from './components/pages/ourteam/ourteamComponents/team-card/team-card.component';
-import { OpportunityCardComponent } from './components/pages/news/newsComponents/opportunity-card/opportunity-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CarouselComponent } from './components/pages/news/newsComponents/carousel/carousel.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
+import { FormsModule } from '@angular/forms';
+import { PrivateModule } from './components/pages/private/private/private.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    NewsComponent,
     OurteamComponent,
     RegisterComponent,
     FooterComponent,
     HeroComponent,
     OpportunitiesComponent,
     ServicesComponent,
-    SearchComponent,
-    OpportunityCardsComponent,
     TeamSectionComponent,
     WhoWeAreComponent,
     ValuesSectionComponent,
@@ -59,9 +53,7 @@ import { TranslocoRootModule } from './transloco-root.module';
     WompiButtonComponent,
     OpportunitieCardComponent,
     ServicesCardComponent,
-    TeamCardComponent,
-    OpportunityCardComponent,
-    CarouselComponent
+    TeamCardComponent
   ],
   imports: [
     BrowserModule,
@@ -69,10 +61,12 @@ import { TranslocoRootModule } from './transloco-root.module';
     BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,
-    TranslocoRootModule
+    TranslocoRootModule,
+    FormsModule,
+    PrivateModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],  
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
