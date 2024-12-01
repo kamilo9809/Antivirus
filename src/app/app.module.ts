@@ -27,7 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PrivateModule } from './components/pages/private/private/private.module';
 
 @NgModule({
@@ -53,7 +53,8 @@ import { PrivateModule } from './components/pages/private/private/private.module
     WompiButtonComponent,
     OpportunitieCardComponent,
     ServicesCardComponent,
-    TeamCardComponent
+    TeamCardComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +64,7 @@ import { PrivateModule } from './components/pages/private/private/private.module
     HttpClientModule,
     TranslocoRootModule,
     FormsModule,
+    ReactiveFormsModule,
     PrivateModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],  

@@ -1,0 +1,49 @@
+<div class="overflow-x-auto">
+  <table class="table table-xs">
+    <thead>
+      <tr>
+        <th *ngFor="let header of headers" scope="col">{{header}}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let row of rows">
+        <td *ngFor="let header of headers">{{row[header]}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold">Hola Admin!</h3>
+    <p class="py-4">Presiona ESC o close para cerrar la ventana</p>
+    
+      <form  method="dialog">
+        
+         <div *ngFor="let header of headers" class="flex justify-between">
+           <label [htmlFor]="header">{{header}}</label>
+
+            <details class="dropdown">
+            <summary class="btn m-1">{{header}}</summary>
+            <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
+            </ul>
+          </details> 
+
+            <input type="text" [placeholder]="header" class="input w-full max-w-xs mb-5 border-cyan-300 " />
+
+         </div>
+
+         <div class="flex justify-end space-x-2">
+           <button 
+            class="btn bg-green-400"
+            (click)="postData()"
+            >Enviar</button>
+           <button class="btn">Cerrar</button>
+         </div>
+      </form>
+    </div>
+  
+</dialog>

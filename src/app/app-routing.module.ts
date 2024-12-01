@@ -10,13 +10,18 @@ import { AdminComponent } from './components/pages/private/private/admin/admin.c
 import { NewsComponent } from './components/pages/private/private/user/news/news.component';
 import { authGuard } from './guards/auth.guard';
 import { ConfigComponent } from './components/pages/private/private/admin/config/config.component';
+import { ListUsersComponent } from './components/pages/private/private/admin/config/pages/list-users/list-users.component';
+import { ListOpportunityComponent } from './components/pages/private/private/admin/config/pages/list-opportunity/list-opportunity.component';
+import { ListBootcampComponent } from './components/pages/private/private/admin/config/pages/list-bootcamp/list-bootcamp.component';
+import { ListInstitutionComponent } from './components/pages/private/private/admin/config/pages/list-institution/list-institution.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'private',
     component: PrivateComponent,
-    canActivate:[authGuard],
+    //canActivate:[authGuard],
     children: [
       {
         path: 'user',
@@ -28,7 +33,16 @@ const routes: Routes = [
       { path: 'admin', 
         component: AdminComponent, 
         children:[
-          { path: 'config', component: ConfigComponent}
+          { path: 'config', component: ConfigComponent,
+            children:[
+              { path: 'list-user', component: ListUsersComponent },
+              { path: 'list-opportunity', component: ListOpportunityComponent },
+              { path: 'list-bootcamp', component: ListBootcampComponent },
+              { path: 'list-institution', component: ListInstitutionComponent },
+              { path: '**', redirectTo:'list-user', pathMatch:'full' },
+            ]
+          },
+          { path: '**', redirectTo:'config', pathMatch:'full' },
         ]
       },
     ],

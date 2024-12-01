@@ -29,4 +29,6 @@ export class AuthSocialService {
     const provider = new FacebookAuthProvider();
     return signInWithPopup(this.auth, provider);
   }
+
+  authenticateSocial(){}
 }

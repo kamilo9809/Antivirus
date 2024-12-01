@@ -24,7 +24,7 @@ export class LoginFormComponent {
         console.log(res);
         const token = res.token
         sessionStorage.setItem("token",token);
-        if (res.role[0].id == 1) {
+        if (res.role[0].id == 2) {
           this.router.navigate(['/private/admin/config'])
           this.authService.login()
         }else{
